@@ -1,0 +1,34 @@
+# Datasets and medical images
+LNDbv4/
+datasets/
+LNDbv4_monai_luna16_aligned/images/
+*.mhd
+*.raw
+*.npy
+
+# Training and evaluation logs / generated outputs
+*.log
+events.out.tfevents*
+LNDbv4_monai_luna16_aligned/monai_eval_*/
+LNDbv4_monai_luna16_aligned/monai_infer_*/
+LNDbv4_monai_luna16_aligned/monai_finetune_*/logs/
+LNDbv4_monai_luna16_aligned/monai_finetune_*/eval*/
+
+# Archives and local databases
+*.rar
+*.zip
+*.db
+
+# Local caches and platform files
+__pycache__/
+.ipynb_checkpoints/
+.autodl/
+.Trash-0/
+
+# Large non-PT model artifacts not needed for this repo
+*.ts
+*.onnx
+*.bin
+*.h5
+*.msgpack
+hf_models/Bio_ClinicalBERT/

@@ -1,0 +1,17 @@
+{
+  "lndb_dir": "/root/autodl-tmp/LNDbv4",
+  "out_dir": "/root/autodl-tmp/LNDbv4_monai_luna16_aligned",
+  "target_spacing": [
+    0.703125,
+    0.703125,
+    1.25
+  ],
+  "clip_hu": false,
+  "train_cts": 236,
+  "test_cts": 58,
+  "boxes_from": "trainNodules_gt.csv",
+  "box_mode": "cccwhd",
+  "label_mapping": {
+    "nodule": 0
+  }
+}

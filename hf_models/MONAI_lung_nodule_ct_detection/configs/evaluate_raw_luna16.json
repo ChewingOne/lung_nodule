@@ -1,0 +1,86 @@
+{
+    "data_list_file_path": "/root/autodl-tmp/datasets/LUNA16/LUNA16_datasplit/mhd_original/dataset_fold0.json",
+    "dataset_dir": "/root/autodl-tmp/datasets/LUNA16/subset0/subset0",
+    "output_dir": "/root/autodl-tmp/datasets/LUNA16/monai_eval_raw",
+    "validate#preprocessing": {
+        "_target_": "Compose",
+        "transforms": [
+            {
+                "_target_": "LoadImaged",
+                "keys": "image",
+                "reader": "itkreader",
+                "affine_lps_to_ras": true
+            },
+            {
+                "_target_": "EnsureChannelFirstd",
+                "keys": "image"
+            },
+            {
+                "_target_": "EnsureTyped",
+                "keys": [
+                    "image",
+                    "box"
+                ]
+            },
+            {
+                "_target_": "EnsureTyped",
+                "keys": "label",
+                "dtype": "$torch.long"
+            },
+            {
+                "_target_": "Orientationd",
+                "keys": "image",
+                "axcodes": "RAS"
+            },
+            {
+                "_target_": "Spacingd",
+                "keys": "image",
+                "pixdim": [
+                    0.703125,
+                    0.703125,
+                    1.25
+                ]
+            },
+            {
+                "_target_": "ScaleIntensityRanged",
+                "keys": "image",
+                "a_min": -1024.0,
+                "a_max": 300.0,
+                "b_min": 0.0,
+                "b_max": 1.0,
+                "clip": true
+            },
+            {
+                "_target_": "ConvertBoxToStandardModed",
+                "box_keys": "box",
+                "mode": "cccwhd"
+            },
+            {
+                "_target_": "AffineBoxToImageCoordinated",
+                "box_keys": "box",
+                "box_ref_image_keys": "image",
+                "affine_lps_to_ras": true
+            },
+            {
+                "_target_": "EnsureTyped",
+                "keys": [
+                    "image",
+                    "box"
+                ]
+            },
+            {
+                "_target_": "EnsureTyped",
+                "keys": "label",
+                "dtype": "$torch.long"
+            },
+            {
+                "_target_": "ToTensord",
+                "keys": [
+                    "image",
+                    "box",
+                    "label"
+                ]
+            }
+        ]
+    }
+}

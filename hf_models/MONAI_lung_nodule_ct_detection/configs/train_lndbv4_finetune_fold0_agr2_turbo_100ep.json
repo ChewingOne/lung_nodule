@@ -1,0 +1,180 @@
+{
+    "data_list_file_path": "/root/autodl-tmp/LNDbv4_monai_luna16_aligned/lndbv4_train_folds1-3_test_fold0.json",
+    "dataset_dir": "/root/autodl-tmp/LNDbv4_monai_luna16_aligned",
+    "pretrained_ckpt_dir": "/root/autodl-tmp/hf_models/MONAI_lung_nodule_ct_detection/models",
+    "pretrained_ckpt_filename": "model.pt",
+    "pretrained_ckpt": "$@pretrained_ckpt_dir + '/' + @pretrained_ckpt_filename",
+    "best_ckpt_filename": "best.pt",
+    "last_ckpt_filename": "last.pt",
+    "epochs": 100,
+    "val_interval": 5,
+    "learning_rate": 0.001,
+    "batch_size": 8,
+    "num_train_workers": 8,
+    "num_val_workers": 4,
+    "output_dir": "/root/autodl-tmp/LNDbv4_monai_luna16_aligned/monai_finetune_fold0_agr2_turbo_100ep/logs",
+    "ckpt_dir": "/root/autodl-tmp/LNDbv4_monai_luna16_aligned/monai_finetune_fold0_agr2_turbo_100ep/models",
+    "train_datalist": "$monai.data.load_decathlon_datalist(@data_list_file_path, is_segmentation=True, data_list_key='training', base_dir=@dataset_dir)",
+    "val_datalist": "$monai.data.load_decathlon_datalist(@data_list_file_path, is_segmentation=True, data_list_key='validation', base_dir=@dataset_dir)",
+    "after_scheduler": {
+        "_target_": "torch.optim.lr_scheduler.StepLR",
+        "optimizer": "@optimizer",
+        "step_size": 30,
+        "gamma": 0.1
+    },
+    "lr_scheduler": {
+        "_target_": "scripts.warmup_scheduler.GradualWarmupScheduler",
+        "optimizer": "@optimizer",
+        "multiplier": 1,
+        "total_epoch": 3,
+        "after_scheduler": "@after_scheduler"
+    },
+    "train#preprocessing_transforms": [
+        {
+            "_target_": "LoadImaged",
+            "keys": "image"
+        },
+        {
+            "_target_": "EnsureChannelFirstd",
+            "keys": "image"
+        },
+        {
+            "_target_": "EnsureTyped",
+            "keys": [
+                "image",
+                "box"
+            ]
+        },
+        {
+            "_target_": "Lambdad",
+            "keys": "box",
+            "func": "$lambda x: x.reshape((-1, 6))"
+        },
+        {
+            "_target_": "EnsureTyped",
+            "keys": "label",
+            "dtype": "$torch.long"
+        },
+        {
+            "_target_": "Orientationd",
+            "keys": "image",
+            "axcodes": "RAS"
+        },
+        {
+            "_target_": "ScaleIntensityRanged",
+            "keys": "image",
+            "a_min": -1024.0,
+            "a_max": 300.0,
+            "b_min": 0.0,
+            "b_max": 1.0,
+            "clip": true
+        },
+        {
+            "_target_": "ConvertBoxToStandardModed",
+            "box_keys": "box",
+            "mode": "cccwhd"
+        },
+        {
+            "_target_": "AffineBoxToImageCoordinated",
+            "box_keys": "box",
+            "box_ref_image_keys": "image",
+            "affine_lps_to_ras": true
+        }
+    ],
+    "train#dataset": {
+        "_target_": "Dataset",
+        "data": "@train_datalist",
+        "transform": "@train#preprocessing"
+    },
+    "train#dataloader": {
+        "_target_": "DataLoader",
+        "dataset": "@train#dataset",
+        "batch_size": 1,
+        "shuffle": true,
+        "num_workers": "@num_train_workers",
+        "collate_fn": "$monai.data.utils.no_collation",
+        "pin_memory": true,
+        "persistent_workers": true,
+        "prefetch_factor": 2
+    },
+    "train#handlers": [
+        {
+            "_target_": "LrScheduleHandler",
+            "lr_scheduler": "@lr_scheduler",
+            "print_lr": true
+        },
+        {
+            "_target_": "ValidationHandler",
+            "validator": "@validate#evaluator",
+            "epoch_level": true,
+            "interval": "@val_interval"
+        },
+        {
+            "_target_": "StatsHandler",
+            "tag_name": "train_loss",
+            "output_transform": "$lambda x: monai.handlers.from_engine(['loss'], first=True)(x)[0]"
+        },
+        {
+            "_target_": "TensorBoardStatsHandler",
+            "log_dir": "@output_dir",
+            "tag_name": "train_loss",
+            "output_transform": "$lambda x: monai.handlers.from_engine(['loss'], first=True)(x)[0]"
+        },
+        {
+            "_target_": "CheckpointSaver",
+            "save_dir": "@ckpt_dir",
+            "save_dict": {
+                "model": "@network"
+            },
+            "save_final": true,
+            "final_filename": "@last_ckpt_filename"
+        }
+    ],
+    "validate#dataset": {
+        "_target_": "Dataset",
+        "data": "@val_datalist",
+        "transform": "@validate#preprocessing"
+    },
+    "validate#dataloader": {
+        "_target_": "DataLoader",
+        "dataset": "@validate#dataset",
+        "batch_size": 1,
+        "shuffle": false,
+        "num_workers": "@num_val_workers",
+        "collate_fn": "$monai.data.utils.no_collation",
+        "pin_memory": true,
+        "persistent_workers": true,
+        "prefetch_factor": 2
+    },
+    "validate#handlers": [
+        {
+            "_target_": "StatsHandler",
+            "iteration_log": false
+        },
+        {
+            "_target_": "TensorBoardStatsHandler",
+            "log_dir": "@output_dir",
+            "iteration_log": false
+        },
+        {
+            "_target_": "CheckpointSaver",
+            "save_dir": "@ckpt_dir",
+            "save_dict": {
+                "model": "@network"
+            },
+            "save_key_metric": true,
+            "key_metric_filename": "@best_ckpt_filename"
+        }
+    ],
+    "checkpointloader": {
+        "_target_": "CheckpointLoader",
+        "load_path": "@pretrained_ckpt",
+        "load_dict": {
+            "model": "@network"
+        }
+    },
+    "initialize": [
+        "$monai.utils.set_determinism(seed=0)",
+        "$@checkpointloader(@train#trainer)"
+    ]
+}
