@@ -15,6 +15,23 @@
             "label_key": "label",
             "pred_score_key": "label_scores",
             "reduce_scalar": false
+        },
+        "val_froc": {
+            "_target_": "scripts.frocmetric_ignite.IgniteFROCMetric",
+            "output_transform": "$monai.handlers.from_engine(['pred', 'label'])",
+            "box_key": "box",
+            "label_key": "label",
+            "pred_score_key": "label_scores",
+            "iou_threshold": 0.1,
+            "fp_per_scan": [
+                0.125,
+                0.25,
+                0.5,
+                1.0,
+                2.0,
+                4.0,
+                8.0
+            ]
         }
     },
     "validate#handlers": [
@@ -33,10 +50,12 @@
             "_target_": "MetricsSaver",
             "save_dir": "@output_dir",
             "metrics": [
-                "val_coco"
+                "val_coco",
+                "val_froc"
             ],
             "metric_details": [
-                "val_coco"
+                "val_coco",
+                "val_froc"
             ],
             "batch_transform": "$lambda x: [xx['image'].meta for xx in x]",
             "summary_ops": "*"
