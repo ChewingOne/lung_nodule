@@ -8,11 +8,16 @@ LNDbv4_monai_luna16_aligned/images/
 
 # Training and evaluation logs / generated outputs
 *.log
+*.pt
+*.pth
+*.ckpt
 events.out.tfevents*
 LNDbv4_monai_luna16_aligned/monai_eval_*/
 LNDbv4_monai_luna16_aligned/monai_infer_*/
 LNDbv4_monai_luna16_aligned/monai_finetune_*/logs/
 LNDbv4_monai_luna16_aligned/monai_finetune_*/eval*/
+LNDbv4_monai_luna16_aligned/monai_text_mlp_*/
+LNDbv4_monai_luna16_aligned/monai_text_mlp_spatial_*/
 
 # Archives and local databases
 *.rar

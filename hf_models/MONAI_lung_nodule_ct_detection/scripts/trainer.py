@@ -23,6 +23,8 @@ from monai.utils.enums import CommonKeys as Keys
 from torch.optim.optimizer import Optimizer
 from torch.utils.data import DataLoader
 
+from .text_conditioning import batch_text_features
+
 if TYPE_CHECKING:
     from ignite.engine import Engine, EventEnum
     from ignite.metrics import Metric
@@ -48,21 +50,25 @@ def detection_prepare_batch(
     Returns:
         image, label(optional).
     """
+    flat_batchdata = [batch_data_ii for batch_data_i in batchdata for batch_data_ii in batch_data_i]
+
     inputs = [
-        batch_data_ii["image"].to(device=device, non_blocking=non_blocking, **kwargs)
-        for batch_data_i in batchdata
-        for batch_data_ii in batch_data_i
+        batch_data_i["image"].to(device=device, non_blocking=non_blocking, **kwargs) for batch_data_i in flat_batchdata
     ]
 
-    if isinstance(batchdata[0][0].get(Keys.LABEL), torch.Tensor):
+    if isinstance(flat_batchdata[0].get(Keys.LABEL), torch.Tensor):
         targets = [
             dict(
-                label=batch_data_ii["label"].to(device=device, non_blocking=non_blocking, **kwargs),
-                box=batch_data_ii["box"].to(device=device, non_blocking=non_blocking, **kwargs),
+                label=batch_data_i["label"].to(device=device, non_blocking=non_blocking, **kwargs),
+                box=batch_data_i["box"].to(device=device, non_blocking=non_blocking, **kwargs),
             )
-            for batch_data_i in batchdata
-            for batch_data_ii in batch_data_i
+            for batch_data_i in flat_batchdata
         ]
+        if "text_fields" in flat_batchdata[0]:
+            text_features = batch_text_features(
+                flat_batchdata, device=device, non_blocking=non_blocking, **kwargs
+            )
+            return inputs, targets, (), {"text_features": text_features}
         return (inputs, targets)
     return inputs, None
 
@@ -200,7 +206,7 @@ class DetectionTrainer(Trainer):
                 w_cls: weight of classification loss
                 w_box_reg: weight of box regression loss
             """
-            outputs = engine.detector(inputs, targets)
+            outputs = engine.detector(inputs, targets, *args, **kwargs)
             engine.state.output[engine.detector.cls_key] = outputs[engine.detector.cls_key]
             engine.state.output[engine.detector.box_reg_key] = outputs[engine.detector.box_reg_key]
             engine.state.output[Keys.LOSS] = (

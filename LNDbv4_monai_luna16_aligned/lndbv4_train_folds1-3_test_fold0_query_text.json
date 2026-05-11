@@ -1,0 +1,7740 @@
+{
+  "spacing": [
+    0.703125,
+    0.703125,
+    1.25
+  ],
+  "box_mode": "cccwhd",
+  "label_mapping": {
+    "nodule": 0
+  },
+  "filtering": {
+    "nodule": 1,
+    "min_agr_level": 2,
+    "include_nonnodules": false
+  },
+  "split": {
+    "source": "/root/autodl-tmp/LNDbv4/trainFolds.csv",
+    "training_folds": [
+      "Fold1",
+      "Fold2",
+      "Fold3"
+    ],
+    "validation_fold": "Fold0",
+    "test_fold": "Fold0",
+    "note": "LNDbv4 official 58-case test set is not included here because it has no public GT labels."
+  },
+  "description": "LNDbv4 query-conditioned text datalist. Each item contains one CT image, one query_text, and the corresponding single GT box.",
+  "text_source_file": "/root/autodl-tmp/LNDbv4/allNods.csv",
+  "text_policy": {
+    "reliable_where": "TextReport+RadAnnotation",
+    "generic_prompt": "A pulmonary nodule.",
+    "leakage_guard": "x/y/z coordinates are not included in text prompts."
+  },
+  "training": [
+    {
+      "image": "images/LNDb-0001.mhd",
+      "query_text": "A 8.5 mm nodule in the apical region of the right upper lobe with margin score 1.",
+      "box": [
+        [
+          -44.20345052166667,
+          -119.07324219166667,
+          -37.5,
+          7.516571651829384,
+          7.516571651829384,
+          7.516571651829384
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "apical",
+        "diameter_mm": "8.5",
+        "nodule_type": "nodule",
+        "characteristics": "margin score 1",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0002.mhd",
+      "query_text": "A possible nodule in the left upper lobe with calcification score 5.",
+      "box": [
+        [
+          88.8955078125,
+          -123.86751302083333,
+          -129.5,
+          8.97113221196342,
+          8.97113221196342,
+          8.97113221196342
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "calcification score 5",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0002.mhd",
+      "query_text": "A possible nodule in the left upper lobe with calcification score 5.",
+      "box": [
+        [
+          63.5341796875,
+          -112.7568359375,
+          -117.5,
+          6.937737061378964,
+          6.937737061378964,
+          6.937737061378964
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "calcification score 5",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0002.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -103.8505859375,
+          -116.7421875,
+          -253.0,
+          8.28445820524647,
+          8.28445820524647,
+          8.28445820524647
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0004.mhd",
+      "query_text": "A 11 mm nodule in the right upper lobe with internal structure score 3.",
+      "box": [
+        [
+          -66.9228515625,
+          -172.7919921875,
+          -591.1666666666666,
+          12.58176339063435,
+          12.58176339063435,
+          12.58176339063435
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "11",
+        "nodule_type": "nodule",
+        "characteristics": "internal structure score 3",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0004.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -85.814453125,
+          -97.2255859375,
+          -718.5,
+          6.852413664768291,
+          6.852413664768291,
+          6.852413664768291
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0008.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -103.306640625,
+          -166.98502604166666,
+          -120.16666666666667,
+          5.630835626507922,
+          5.630835626507922,
+          5.630835626507922
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0008.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -110.69986979166667,
+          -148.71940104166666,
+          -115.83333333333333,
+          7.676852599070257,
+          7.676852599070257,
+          7.676852599070257
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0010.mhd",
+      "query_text": "A 7 mm nodule in the posterior lateral justapleural region of the right lower lobe.",
+      "box": [
+        [
+          -114.701171875,
+          -127.408203125,
+          -375.0,
+          5.209961882341032,
+          5.209961882341032,
+          5.209961882341032
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "posterior lateral justapleural",
+        "diameter_mm": "7",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0010.mhd",
+      "query_text": "A 7 mm nodule in the lingula or left lower lobe.",
+      "box": [
+        [
+          98.94140625,
+          -174.376953125,
+          -304.5,
+          3.8276700445488676,
+          3.8276700445488676,
+          3.8276700445488676
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "lingula or left lower lobe",
+        "position": "",
+        "diameter_mm": "7",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0011.mhd",
+      "query_text": "A possible nodule in the right upper lobe.",
+      "box": [
+        [
+          -65.88020833333333,
+          -133.49479166666666,
+          -277.8333333333333,
+          8.468471952734609,
+          8.468471952734609,
+          8.468471952734609
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0011.mhd",
+      "query_text": "A possible nodule in the right upper lobe.",
+      "box": [
+        [
+          -71.71875,
+          -130.921875,
+          -281.5,
+          6.804843767430392,
+          6.804843767430392,
+          6.804843767430392
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0011.mhd",
+      "query_text": "A possible nodule in the right upper lobe.",
+      "box": [
+        [
+          -63.703125,
+          -105.984375,
+          -279.5,
+          7.812957001946477,
+          7.812957001946477,
+          7.812957001946477
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0011.mhd",
+      "query_text": "A possible nodule in the right upper lobe.",
+      "box": [
+        [
+          -36.390625,
+          -92.72395833333333,
+          -295.5,
+          8.273098712538232,
+          8.273098712538232,
+          8.273098712538232
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0011.mhd",
+      "query_text": "A possible nodule in the right upper lobe.",
+      "box": [
+        [
+          -51.828125,
+          -93.515625,
+          -275.5,
+          5.969874964605456,
+          5.969874964605456,
+          5.969874964605456
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0011.mhd",
+      "query_text": "A possible nodule in the right upper lobe.",
+      "box": [
+        [
+          -54.203125,
+          -93.8125,
+          -285.5,
+          6.072023227322708,
+          6.072023227322708,
+          6.072023227322708
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 6,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0011.mhd",
+      "query_text": "A possible nodule in the right upper lobe.",
+      "box": [
+        [
+          -51.234375,
+          -139.234375,
+          -281.0,
+          6.223440615928654,
+          6.223440615928654,
+          6.223440615928654
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 7,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0013.mhd",
+      "query_text": "A 8 mm nodule in the anterior region of the right upper lobe.",
+      "box": [
+        [
+          -77.474609375,
+          -210.63736979166666,
+          814.0,
+          3.321178008886007,
+          3.321178008886007,
+          3.321178008886007
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "anterior",
+        "diameter_mm": "8",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0013.mhd",
+      "query_text": "A 4 mm micronodule in the left lower lobe.",
+      "box": [
+        [
+          128.666015625,
+          -115.50390625,
+          536.0,
+          5.1029821452208175,
+          5.1029821452208175,
+          5.1029821452208175
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0015.mhd",
+      "query_text": "A 4 mm nodule in the posterior region of the right upper lobe.",
+      "box": [
+        [
+          -67.40690104166667,
+          -129.974609375,
+          -205.0,
+          4.766817218513301,
+          4.766817218513301,
+          4.766817218513301
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "posterior",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0018.mhd",
+      "query_text": "A possible 6 mm nodule in the justapleural region of the right upper lobe.",
+      "box": [
+        [
+          -95.4443359375,
+          -154.6650390625,
+          -133.5,
+          5.597529925098449,
+          5.597529925098449,
+          5.597529925098449
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "justapleural",
+        "diameter_mm": "6",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "is it?"
+      }
+    },
+    {
+      "image": "images/LNDb-0018.mhd",
+      "query_text": "A possible 6 mm nodule in the justapleural region of the right upper lobe.",
+      "box": [
+        [
+          -39.19140625,
+          -66.1533203125,
+          -144.5,
+          5.816989147773069,
+          5.816989147773069,
+          5.816989147773069
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "justapleural",
+        "diameter_mm": "6",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "is it?"
+      }
+    },
+    {
+      "image": "images/LNDb-0018.mhd",
+      "query_text": "A possible 7 mm nodule in the right lower lobe.",
+      "box": [
+        [
+          -97.310546875,
+          -116.2744140625,
+          -208.5,
+          6.494553620691601,
+          6.494553620691601,
+          6.494553620691601
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "7",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "is it?"
+      }
+    },
+    {
+      "image": "images/LNDb-0018.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          80.779296875,
+          -190.65625,
+          -216.5,
+          5.838306751563851,
+          5.838306751563851,
+          5.838306751563851
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0021.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -108.572265625,
+          -117.009765625,
+          -406.5,
+          3.752228248252057,
+          3.752228248252057,
+          3.752228248252057
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0024.mhd",
+      "query_text": "A possible nodule in the anterior region of the left upper lobe with texture score 1.",
+      "box": [
+        [
+          48.794921875,
+          -198.158203125,
+          -217.0,
+          7.399128976528349,
+          7.399128976528349,
+          7.399128976528349
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "anterior",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 1",
+        "uncertainty": "is it?"
+      }
+    },
+    {
+      "image": "images/LNDb-0024.mhd",
+      "query_text": "A 23 mm nodule in the medial region of the lingula with margin score 5.",
+      "box": [
+        [
+          38.324869791666664,
+          -161.14778645833334,
+          -282.6666666666667,
+          26.97653803325286,
+          26.97653803325286,
+          26.97653803325286
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "lingula",
+        "position": "medial",
+        "diameter_mm": "23",
+        "nodule_type": "nodule",
+        "characteristics": "margin score 5",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0025.mhd",
+      "query_text": "A 6 mm nodule in the right middle lobe.",
+      "box": [
+        [
+          -142.00423177083334,
+          -185.1943359375,
+          -293.5,
+          6.542033339212872,
+          6.542033339212872,
+          6.542033339212872
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "6",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0025.mhd",
+      "query_text": "A 5 mm nodule in the left lower lobe.",
+      "box": [
+        [
+          105.4814453125,
+          -122.3955078125,
+          -271.1666666666667,
+          5.294827248849041,
+          5.294827248849041,
+          5.294827248849041
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0025.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          109.4560546875,
+          -155.7822265625,
+          -233.5,
+          5.468436706352593,
+          5.468436706352593,
+          5.468436706352593
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0025.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          84.0185546875,
+          -112.8564453125,
+          -192.5,
+          4.144773112127479,
+          4.144773112127479,
+          4.144773112127479
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0026.mhd",
+      "query_text": "A possible micronodule in the right upper lobe.",
+      "box": [
+        [
+          -84.84375,
+          -174.52734375,
+          -116.0,
+          4.544772250191199,
+          4.544772250191199,
+          4.544772250191199
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0026.mhd",
+      "query_text": "A possible micronodule in the right middle lobe.",
+      "box": [
+        [
+          -91.693359375,
+          -194.423828125,
+          -197.0,
+          9.35548876129895,
+          9.35548876129895,
+          9.35548876129895
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0026.mhd",
+      "query_text": "A possible micronodule in the left lower lobe.",
+      "box": [
+        [
+          21.814453125,
+          -52.5390625,
+          -240.0,
+          4.733564512136193,
+          4.733564512136193,
+          4.733564512136193
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0028.mhd",
+      "query_text": "A micronodule in the lateral region of the right upper lobe.",
+      "box": [
+        [
+          -93.109375,
+          -114.52604166666667,
+          72.5,
+          7.486787459885821,
+          7.486787459885821,
+          7.486787459885821
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "lateral",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0028.mhd",
+      "query_text": "A 4 mm nodule in the posterior basal region of the right lower lobe.",
+      "box": [
+        [
+          -84.84375,
+          -64.09375,
+          -58.5,
+          5.144526316402985,
+          5.144526316402985,
+          5.144526316402985
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "posterior basal",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0031.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -78.2978515625,
+          -192.7939453125,
+          -81.0,
+          7.146674426316951,
+          7.146674426316951,
+          7.146674426316951
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 6,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0031.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -131.7509765625,
+          -109.880859375,
+          2.0,
+          6.025798608233201,
+          6.025798608233201,
+          6.025798608233201
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 7,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0031.mhd",
+      "query_text": "A granuloma in the right upper lobe with calcification score 5.",
+      "box": [
+        [
+          -73.4384765625,
+          -207.068359375,
+          6.0,
+          6.385558562080309,
+          6.385558562080309,
+          6.385558562080309
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 8,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "granuloma",
+        "characteristics": "calcification score 5",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0039.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          89.841796875,
+          -163.2119140625,
+          -189.5,
+          5.173853465365678,
+          5.173853465365678,
+          5.173853465365678
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0041.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          56.375,
+          -246.51171875,
+          -193.5,
+          3.4804140078155417,
+          3.4804140078155417,
+          3.4804140078155417
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0046.mhd",
+      "query_text": "A 6 mm nodule in the left upper lobe.",
+      "box": [
+        [
+          76.9716796875,
+          -149.1181640625,
+          -179.0,
+          6.6066477513368635,
+          6.6066477513368635,
+          6.6066477513368635
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "6",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0048.mhd",
+      "query_text": "A 4 mm nodule in the left lower lobe with texture score 1.",
+      "box": [
+        [
+          82.42643229166667,
+          146.4665364583333,
+          -230.638671875,
+          4.4696996136329865,
+          4.4696996136329865,
+          4.4696996136329865
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 1",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0050.mhd",
+      "query_text": "A possible 5 mm micronodule in the right middle lobe.",
+      "box": [
+        [
+          -80.16796875,
+          -210.8984375,
+          21.0,
+          5.713867860992335,
+          5.713867860992335,
+          5.713867860992335
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0050.mhd",
+      "query_text": "A possible 5 mm micronodule in the left upper lobe.",
+      "box": [
+        [
+          69.18619791666667,
+          -125.66536458333333,
+          148.83333333333334,
+          5.559238928937205,
+          5.559238928937205,
+          5.559238928937205
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0050.mhd",
+      "query_text": "A possible 5 mm micronodule in the left lower lobe.",
+      "box": [
+        [
+          66.91796875,
+          -113.27734375,
+          52.0,
+          5.497411641800041,
+          5.497411641800041,
+          5.497411641800041
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 7,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0051.mhd",
+      "query_text": "A 15 mm nodule in the posterior region of the right upper lobe with margin score 3.",
+      "box": [
+        [
+          -105.001953125,
+          -109.095703125,
+          -144.0,
+          15.895206718266117,
+          15.895206718266117,
+          15.895206718266117
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "posterior",
+        "diameter_mm": "15",
+        "nodule_type": "nodule",
+        "characteristics": "margin score 3",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0051.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -93.5859375,
+          -171.068359375,
+          -108.0,
+          4.174384747233442,
+          4.174384747233442,
+          4.174384747233442
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0051.mhd",
+      "query_text": "A granuloma in the left upper lobe with calcification score 5.",
+      "box": [
+        [
+          62.9765625,
+          -193.900390625,
+          -154.0,
+          5.937138874963333,
+          5.937138874963333,
+          5.937138874963333
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "granuloma",
+        "characteristics": "calcification score 5",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0052.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          55.947265625,
+          -82.087890625,
+          -399.5,
+          7.951175958445082,
+          7.951175958445082,
+          7.951175958445082
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0053.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          61.243489583333336,
+          266.83203125,
+          -233.5,
+          13.949584173240957,
+          13.949584173240957,
+          13.949584173240957
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0053.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -82.06640625,
+          216.51171875,
+          -142.0,
+          3.5477515083010767,
+          3.5477515083010767,
+          3.5477515083010767
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0059.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          84.68489583333333,
+          -117.2421875,
+          -40.5,
+          10.208577244091074,
+          10.208577244091074,
+          10.208577244091074
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0059.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          89.3828125,
+          -143.5078125,
+          -30.5,
+          4.4377347152907545,
+          4.4377347152907545,
+          4.4377347152907545
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0060.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -52.1181640625,
+          -77.7060546875,
+          -82.5,
+          7.741578555772155,
+          7.741578555772155,
+          7.741578555772155
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0060.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -116.9853515625,
+          -215.9013671875,
+          -148.16666666666666,
+          5.891090677839269,
+          5.891090677839269,
+          5.891090677839269
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0062.mhd",
+      "query_text": "A 29 mm nodule in the posterior apical region of the left upper lobe with texture score 3.",
+      "box": [
+        [
+          77.4296875,
+          -136.033203125,
+          -101.0,
+          24.87490026519697,
+          24.87490026519697,
+          24.87490026519697
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "posterior apical",
+        "diameter_mm": "29",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 3",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0064.mhd",
+      "query_text": "A 6 mm nodule in the anterior region of the left upper lobe.",
+      "box": [
+        [
+          99.87434895833333,
+          -220.11783854166666,
+          -166.5,
+          4.594504914753403,
+          4.594504914753403,
+          4.594504914753403
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "anterior",
+        "diameter_mm": "6",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0064.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -87.45703125,
+          -103.130859375,
+          -113.5,
+          4.14305610119969,
+          4.14305610119969,
+          4.14305610119969
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0064.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -37.117838541666664,
+          -108.13216145833333,
+          -88.5,
+          4.466935458630159,
+          4.466935458630159,
+          4.466935458630159
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0065.mhd",
+      "query_text": "A nodule in the right lower lobe with texture score 1.",
+      "box": [
+        [
+          -138.185546875,
+          -117.568359375,
+          -297.0,
+          10.602996149911084,
+          10.602996149911084,
+          10.602996149911084
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 1",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0065.mhd",
+      "query_text": "A 5 mm micronodule in the right lower lobe.",
+      "box": [
+        [
+          -150.90625,
+          -143.3359375,
+          -333.0,
+          7.309414556719929,
+          7.309414556719929,
+          7.309414556719929
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0065.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          114.271484375,
+          -80.05859375,
+          -310.5,
+          4.985875285073805,
+          4.985875285073805,
+          4.985875285073805
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0065.mhd",
+      "query_text": "A 4 mm granuloma in the right lower lobe with calcification score 5.",
+      "box": [
+        [
+          -38.594401041666664,
+          -84.951171875,
+          -314.0,
+          4.973128287530609,
+          4.973128287530609,
+          4.973128287530609
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "granuloma",
+        "characteristics": "calcification score 5",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0067.mhd",
+      "query_text": "A 32 mm mass in the apical region of the left lower lobe.",
+      "box": [
+        [
+          43.125,
+          -94.6279296875,
+          -241.5,
+          30.009572334621172,
+          30.009572334621172,
+          30.009572334621172
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "apical",
+        "diameter_mm": "32",
+        "nodule_type": "mass",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0068.mhd",
+      "query_text": "A 6 mm nodule in the right lower lobe with spiculation score 2.",
+      "box": [
+        [
+          -133.7294921875,
+          -67.142578125,
+          -228.0,
+          6.647370266605574,
+          6.647370266605574,
+          6.647370266605574
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "6",
+        "nodule_type": "nodule",
+        "characteristics": "spiculation score 2",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0068.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -134.05859375,
+          -65.826171875,
+          -220.0,
+          4.199343792052387,
+          4.199343792052387,
+          4.199343792052387
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0105.mhd",
+      "query_text": "A 5 mm micronodule in the right upper lobe.",
+      "box": [
+        [
+          -89.34123101993396,
+          -80.31697184491713,
+          -1054.3607076223589,
+          5.405005166264797,
+          5.405005166264797,
+          5.405005166264797
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0107.mhd",
+      "query_text": "A 18 mm nodule in the right upper lobe.",
+      "box": [
+        [
+          -45.71875,
+          -168.625,
+          -314.0,
+          13.442408253003562,
+          13.442408253003562,
+          13.442408253003562
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "18",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0107.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -122.810546875,
+          -92.685546875,
+          -413.5,
+          5.116030605131786,
+          5.116030605131786,
+          5.116030605131786
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0108.mhd",
+      "query_text": "A 4 mm micronodule in the right lower lobe.",
+      "box": [
+        [
+          -72.998046875,
+          -65.34700520833333,
+          -114.16666666666667,
+          4.461127283513865,
+          4.461127283513865,
+          4.461127283513865
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0108.mhd",
+      "query_text": "A 9.5 mm nodule in the right middle lobe.",
+      "box": [
+        [
+          -55.169921875,
+          -195.87434895833334,
+          -159.5,
+          11.695864974531943,
+          11.695864974531943,
+          11.695864974531943
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "9.5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0110.mhd",
+      "query_text": "A 4 mm micronodule in the right lower lobe.",
+      "box": [
+        [
+          -66.86445666551589,
+          -90.80684416294099,
+          -952.7,
+          7.537457664008928,
+          7.537457664008928,
+          7.537457664008928
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0112.mhd",
+      "query_text": "A granuloma in the left upper lobe with calcification score 5.",
+      "box": [
+        [
+          76.90546875000001,
+          -184.36328125,
+          -982.2999999999998,
+          10.524209136807675,
+          10.524209136807675,
+          10.524209136807675
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "granuloma",
+        "characteristics": "calcification score 5",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0112.mhd",
+      "query_text": "A 11 mm nodule in the left upper lobe.",
+      "box": [
+        [
+          60.57734375000001,
+          -239.28515625,
+          -982.3,
+          5.498301853137791,
+          5.498301853137791,
+          5.498301853137791
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "11",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0139.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -79.8401427505849,
+          -125.05538020377222,
+          -900.2802893620819,
+          3.3082379884613458,
+          3.3082379884613458,
+          3.3082379884613458
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0139.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -101.10621055822425,
+          -118.79847528154097,
+          -929.8280343134181,
+          3.64726077658444,
+          3.64726077658444,
+          3.64726077658444
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0143.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -36.407934932399016,
+          -108.06665207144427,
+          -1018.4829999708261,
+          4.165840958393866,
+          4.165840958393866,
+          4.165840958393866
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0143.mhd",
+      "query_text": "A 10 mm nodule in the basal medial region of the left lower lobe with margin score 4 and texture score 5 and calcification score 6.",
+      "box": [
+        [
+          50.33539585820404,
+          -65.51725411680576,
+          -1101.4830000079971,
+          9.45031859551299,
+          9.45031859551299,
+          9.45031859551299
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "basal medial",
+        "diameter_mm": "10",
+        "nodule_type": "nodule",
+        "characteristics": "margin score 4; texture score 5; calcification score 6",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0144.mhd",
+      "query_text": "A micronodule in the right upper lobe.",
+      "box": [
+        [
+          -44.33031681518267,
+          -73.63386753792784,
+          -962.1712963067117,
+          4.682900881917313,
+          4.682900881917313,
+          4.682900881917313
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0144.mhd",
+      "query_text": "A nodule in the posterior region of the right lower lobe with texture score 2.",
+      "box": [
+        [
+          -119.68156903715192,
+          -102.71752527768504,
+          -1071.274281670455,
+          4.482514433142727,
+          4.482514433142727,
+          4.482514433142727
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "posterior",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 2",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0148.mhd",
+      "query_text": "A 4 mm nodule in the lingula.",
+      "box": [
+        [
+          130.0856753206442,
+          -168.59570762749905,
+          -1049.840620375401,
+          5.624476380397202,
+          5.624476380397202,
+          5.624476380397202
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "lingula",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0148.mhd",
+      "query_text": "A 4 mm nodule in the left upper lobe.",
+      "box": [
+        [
+          114.37045099073396,
+          -133.65605444593615,
+          -1021.9479101697905,
+          5.142833292703017,
+          5.142833292703017,
+          5.142833292703017
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0151.mhd",
+      "query_text": "A 21 mm nodule in the right lower lobe.",
+      "box": [
+        [
+          -86.5400390625,
+          -87.1611328125,
+          -64.4,
+          22.85921002092016,
+          22.85921002092016,
+          22.85921002092016
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "21",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0151.mhd",
+      "query_text": "A 14 mm nodule in the right lower lobe.",
+      "box": [
+        [
+          -62.7568359375,
+          -82.810546875,
+          -125.9,
+          13.244255551815428,
+          13.244255551815428,
+          13.244255551815428
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "14",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0151.mhd",
+      "query_text": "A 21.5 mm nodule in the left lower lobe.",
+      "box": [
+        [
+          43.6875,
+          -68.5986328125,
+          -54.900000000000006,
+          21.340946366722395,
+          21.340946366722395,
+          21.340946366722395
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "21.5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0152.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -92.26921977043837,
+          -196.0425709856077,
+          -1116.8050000647436,
+          4.824633533276945,
+          4.824633533276945,
+          4.824633533276945
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0152.mhd",
+      "query_text": "A 4 mm micronodule in the lateral justapleural region of the left lower lobe.",
+      "box": [
+        [
+          130.6400719063971,
+          -180.61153851955686,
+          -1161.8050000007327,
+          4.047345943434794,
+          4.047345943434794,
+          4.047345943434794
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "lateral justapleural",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0153.mhd",
+      "query_text": "A 4.5 mm nodule in the anterior inferior region of the right upper lobe.",
+      "box": [
+        [
+          -87.05228721547772,
+          -184.5825948706517,
+          -1044.5209999916592,
+          5.653739324522445,
+          5.653739324522445,
+          5.653739324522445
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "anterior inferior",
+        "diameter_mm": "4.5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0153.mhd",
+      "query_text": "A 4.5 mm nodule in the anterior inferior region of the right upper lobe.",
+      "box": [
+        [
+          -87.40263728126166,
+          -178.5078203308498,
+          -1044.5209999914316,
+          4.844616092622539,
+          4.844616092622539,
+          4.844616092622539
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "anterior inferior",
+        "diameter_mm": "4.5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0153.mhd",
+      "query_text": "A 4.5 mm nodule in the anterior inferior region of the right upper lobe.",
+      "box": [
+        [
+          -91.01879935657183,
+          -213.5885757870304,
+          -1050.0209999923634,
+          4.45827061415235,
+          4.45827061415235,
+          4.45827061415235
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "anterior inferior",
+        "diameter_mm": "4.5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0157.mhd",
+      "query_text": "A 12 mm nodule in the right lower lobe with sphericity score 2.",
+      "box": [
+        [
+          -82.7193710781788,
+          -91.51495106889197,
+          -1141.538999911747,
+          12.894149691117438,
+          12.894149691117438,
+          12.894149691117438
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "12",
+        "nodule_type": "nodule",
+        "characteristics": "sphericity score 2",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0159.mhd",
+      "query_text": "A 9 mm nodule in the left upper lobe with margin score 3.",
+      "box": [
+        [
+          69.07011279269142,
+          -108.21601659535487,
+          -1025.4431424599138,
+          10.503653111810664,
+          10.503653111810664,
+          10.503653111810664
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "9",
+        "nodule_type": "nodule",
+        "characteristics": "margin score 3",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0162.mhd",
+      "query_text": "A 5 mm micronodule in the inferior region of the lingula.",
+      "box": [
+        [
+          97.171875,
+          -165.13671875,
+          -374.0,
+          5.7696834338346275,
+          5.7696834338346275,
+          5.7696834338346275
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "lingula",
+        "position": "inferior",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0162.mhd",
+      "query_text": "A 6 mm micronodule in the basal lateral region of the left lower lobe.",
+      "box": [
+        [
+          101.478515625,
+          -110.298828125,
+          -398.0,
+          4.748265697260301,
+          4.748265697260301,
+          4.748265697260301
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "basal lateral",
+        "diameter_mm": "6",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0165.mhd",
+      "query_text": "A 4 mm micronodule in the right lower lobe.",
+      "box": [
+        [
+          -98.04194883175293,
+          -59.50333537957525,
+          -997.1228064528834,
+          4.15631976038279,
+          4.15631976038279,
+          4.15631976038279
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0165.mhd",
+      "query_text": "A 9.5 mm nodule in the right middle lobe.",
+      "box": [
+        [
+          -65.9716960665815,
+          -188.44842211316626,
+          -1043.8440896711875,
+          11.834289444632008,
+          11.834289444632008,
+          11.834289444632008
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "9.5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0167.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          103.2294921875,
+          -113.953125,
+          -157.5,
+          3.4195867592715676,
+          3.4195867592715676,
+          3.4195867592715676
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0167.mhd",
+      "query_text": "A possible 3.5 mm micronodule in the peripheral region of the left upper lobe.",
+      "box": [
+        [
+          111.5322265625,
+          -180.6943359375,
+          -154.66666666666666,
+          4.546893258492683,
+          4.546893258492683,
+          4.546893258492683
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "peripheral",
+        "diameter_mm": "3.5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0167.mhd",
+      "query_text": "A possible 3.5 mm micronodule in the peripheral region of the left lower lobe.",
+      "box": [
+        [
+          120.154296875,
+          -119.3818359375,
+          -221.0,
+          4.708550722026177,
+          4.708550722026177,
+          4.708550722026177
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "peripheral",
+        "diameter_mm": "3.5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0167.mhd",
+      "query_text": "A possible 3.5 mm micronodule in the peripheral region of the right lower lobe.",
+      "box": [
+        [
+          -117.431640625,
+          -139.5,
+          -210.5,
+          3.4634359331229962,
+          3.4634359331229962,
+          3.4634359331229962
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "peripheral",
+        "diameter_mm": "3.5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0167.mhd",
+      "query_text": "A possible 3.5 mm micronodule in the peripheral region of the left upper lobe.",
+      "box": [
+        [
+          52.7744140625,
+          -91.2802734375,
+          -66.0,
+          4.455033159055621,
+          4.455033159055621,
+          4.455033159055621
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "peripheral",
+        "diameter_mm": "3.5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0168.mhd",
+      "query_text": "A possible 4 mm nodule in the right lung with texture score 5.",
+      "box": [
+        [
+          -54.40138508858479,
+          -215.07097969480165,
+          -1038.2600000416305,
+          3.69156803576419,
+          3.69156803576419,
+          3.69156803576419
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lung",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 5",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0168.mhd",
+      "query_text": "A possible 4 mm nodule in the right lung with texture score 5.",
+      "box": [
+        [
+          -119.06230859971666,
+          -182.8487476996462,
+          -1142.2600000460802,
+          3.438119884125841,
+          3.438119884125841,
+          3.438119884125841
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lung",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 5",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0168.mhd",
+      "query_text": "A possible 4 mm nodule in the right lung with texture score 5.",
+      "box": [
+        [
+          -77.06884931188162,
+          -57.4313681002738,
+          -1118.260000065414,
+          5.5183995178232905,
+          5.5183995178232905,
+          5.5183995178232905
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lung",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 5",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0168.mhd",
+      "query_text": "A possible 4 mm nodule in the right lung with texture score 5.",
+      "box": [
+        [
+          -98.10047882623205,
+          -166.25157287068882,
+          -1056.2600000487446,
+          4.084724888633632,
+          4.084724888633632,
+          4.084724888633632
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lung",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 5",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0168.mhd",
+      "query_text": "A possible 4 mm nodule in the right lung with texture score 5.",
+      "box": [
+        [
+          -102.5316313292048,
+          -210.07447446777854,
+          -1121.2600000420593,
+          5.2174077838319795,
+          5.2174077838319795,
+          5.2174077838319795
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 6,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lung",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 5",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0168.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -125.82809980493089,
+          -122.11560148969056,
+          -1173.2600000552568,
+          5.680448592843259,
+          5.680448592843259,
+          5.680448592843259
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 7,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0169.mhd",
+      "query_text": "A 3 mm nodule in the lateral region of the left upper lobe.",
+      "box": [
+        [
+          97.833984375,
+          -151.771484375,
+          -122.5,
+          5.082329403459354,
+          5.082329403459354,
+          5.082329403459354
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "lateral",
+        "diameter_mm": "3",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0174.mhd",
+      "query_text": "A possible micronodule in the left upper lobe.",
+      "box": [
+        [
+          77.4487044148843,
+          -183.03530615745822,
+          -957.504912211501,
+          3.070712997022882,
+          3.070712997022882,
+          3.070712997022882
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0181.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -55.4814453125,
+          -109.3818359375,
+          -281.0,
+          9.246611654502056,
+          9.246611654502056,
+          9.246611654502056
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0182.mhd",
+      "query_text": "A 6 mm micronodule in the basal lateral region of the left lower lobe.",
+      "box": [
+        [
+          87.984375,
+          -63.787109375,
+          -456.0,
+          4.062098933710863,
+          4.062098933710863,
+          4.062098933710863
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "basal lateral",
+        "diameter_mm": "6",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0182.mhd",
+      "query_text": "A 5 mm micronodule in the inferior region of the lingula.",
+      "box": [
+        [
+          97.171875,
+          -164.849609375,
+          -373.5,
+          5.6472981444818515,
+          5.6472981444818515,
+          5.6472981444818515
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "lingula",
+        "position": "inferior",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0183.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          149.39254467185015,
+          -157.7720831591181,
+          -1172.0240228659186,
+          6.736482340611974,
+          6.736482340611974,
+          6.736482340611974
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0185.mhd",
+      "query_text": "A 4 mm micronodule in the right lower lobe.",
+      "box": [
+        [
+          -98.04194883175293,
+          -59.50333537957525,
+          -997.1228064528834,
+          4.6311466203695835,
+          4.6311466203695835,
+          4.6311466203695835
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0185.mhd",
+      "query_text": "A 9.5 mm nodule in the right middle lobe.",
+      "box": [
+        [
+          -65.9716960665815,
+          -188.44842211316626,
+          -1043.8440896711875,
+          11.876719725867423,
+          11.876719725867423,
+          11.876719725867423
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "9.5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0198.mhd",
+      "query_text": "A 2 mm micronodule in the medial region of the right middle lobe.",
+      "box": [
+        [
+          -59.19358718459954,
+          -234.48968973089848,
+          -1045.4070000150073,
+          3.0,
+          3.0,
+          3.0
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "medial",
+        "diameter_mm": "2",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0210.mhd",
+      "query_text": "A 4 mm micronodule in the posterior region of the right upper lobe.",
+      "box": [
+        [
+          -32.43328200568703,
+          -117.65528784082605,
+          -943.1162536188782,
+          4.746464137112579,
+          4.746464137112579,
+          4.746464137112579
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "posterior",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0210.mhd",
+      "query_text": "A 6 mm micronodule in the basal region of the left lower lobe with calcification score 5.",
+      "box": [
+        [
+          45.08391832024509,
+          -59.32052541718059,
+          -1079.7556013734968,
+          5.935463282794486,
+          5.935463282794486,
+          5.935463282794486
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "basal",
+        "diameter_mm": "6",
+        "nodule_type": "micronodule",
+        "characteristics": "calcification score 5",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0212.mhd",
+      "query_text": "A 4 mm nodule in the anterior region of the right upper lobe.",
+      "box": [
+        [
+          -89.23003779897252,
+          -165.96056535979204,
+          -967.5118442632765,
+          4.800916196083109,
+          4.800916196083109,
+          4.800916196083109
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "anterior",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0215.mhd",
+      "query_text": "A possible 5 mm nodule in the right middle lobe.",
+      "box": [
+        [
+          -71.19139406586035,
+          -194.2784610429169,
+          -1073.9331909795255,
+          5.2911317489519485,
+          5.2911317489519485,
+          5.2911317489519485
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "is it?"
+      }
+    },
+    {
+      "image": "images/LNDb-0218.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          2.494794487098048,
+          -222.7239504409303,
+          -1048.3266179649568,
+          5.088263553391698,
+          5.088263553391698,
+          5.088263553391698
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0218.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          82.46694109270331,
+          -151.58945702072032,
+          -958.5414443871357,
+          3.2477516360889735,
+          3.2477516360889735,
+          3.2477516360889735
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0225.mhd",
+      "query_text": "A 3 mm micronodule in the posterior region of the right upper lobe.",
+      "box": [
+        [
+          -91.81788952984974,
+          -123.78396643880538,
+          -980.1620396879799,
+          3.4578897600771517,
+          3.4578897600771517,
+          3.4578897600771517
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "posterior",
+        "diameter_mm": "3",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0227.mhd",
+      "query_text": "A 4 mm micronodule in the left lower lobe.",
+      "box": [
+        [
+          111.27711897859712,
+          -133.12641993252078,
+          -1026.8824060268585,
+          3.4535304920685093,
+          3.4535304920685093,
+          3.4535304920685093
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0231.mhd",
+      "query_text": "A 8 mm nodule in the right middle lobe.",
+      "box": [
+        [
+          -91.87120481563937,
+          -200.12180836279097,
+          -1068.1730000078346,
+          6.402331660824834,
+          6.402331660824834,
+          6.402331660824834
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "8",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0232.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -53.707747889655366,
+          -65.92014177607669,
+          -969.7569999940738,
+          4.363894106702413,
+          4.363894106702413,
+          4.363894106702413
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0232.mhd",
+      "query_text": "A 6 mm micronodule in the posterior justapleural region of the right upper lobe.",
+      "box": [
+        [
+          -38.565073963131255,
+          -67.16761155803584,
+          -972.7569999835717,
+          6.053619633213091,
+          6.053619633213091,
+          6.053619633213091
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "posterior justapleural",
+        "diameter_mm": "6",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0232.mhd",
+      "query_text": "A 3 mm micronodule in the lingula.",
+      "box": [
+        [
+          94.62973617884876,
+          -149.4620791434275,
+          -1013.7569998933278,
+          6.640165956256224,
+          6.640165956256224,
+          6.640165956256224
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "lingula",
+        "position": "",
+        "diameter_mm": "3",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0237.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -85.89659027723911,
+          -169.37517681572882,
+          -965.2468489484813,
+          3.6764865426551876,
+          3.6764865426551876,
+          3.6764865426551876
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0237.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -100.66025382249106,
+          -209.20681791209788,
+          -1061.6468871545744,
+          4.295077431329146,
+          4.295077431329146,
+          4.295077431329146
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0237.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -73.27225339252901,
+          -222.568996440826,
+          -1149.2871194299353,
+          4.4772500400505315,
+          4.4772500400505315,
+          4.4772500400505315
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0240.mhd",
+      "query_text": "A nodule in the right upper lobe.",
+      "box": [
+        [
+          -69.1247610567432,
+          -137.30388150259705,
+          -967.9204633433883,
+          8.978819052473233,
+          8.978819052473233,
+          8.978819052473233
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0243.mhd",
+      "query_text": "A possible nodule in the left upper lobe.",
+      "box": [
+        [
+          84.24656694486495,
+          -87.5620487867678,
+          -973.4800000483992,
+          3.1328668430111546,
+          3.1328668430111546,
+          3.1328668430111546
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0244.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -114.35774731684118,
+          -140.69824495696702,
+          -1035.4236649570148,
+          3.2619850692755525,
+          3.2619850692755525,
+          3.2619850692755525
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0248.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          62.66939384823648,
+          -218.0937283636044,
+          -991.0559297207651,
+          3.8297402412094916,
+          3.8297402412094916,
+          3.8297402412094916
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0252.mhd",
+      "query_text": "A 5 mm granuloma in the right upper lobe with calcification score 5.",
+      "box": [
+        [
+          -100.16982331996542,
+          -102.27622641613479,
+          -1021.7151707263937,
+          5.90800763864806,
+          5.90800763864806,
+          5.90800763864806
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "5",
+        "nodule_type": "granuloma",
+        "characteristics": "calcification score 5",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0253.mhd",
+      "query_text": "A 4 mm nodule in the anterior basal region of the right lower lobe.",
+      "box": [
+        [
+          -36.482421875,
+          -172.333984375,
+          -180.5,
+          4.87028813600944,
+          4.87028813600944,
+          4.87028813600944
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "anterior basal",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0253.mhd",
+      "query_text": "A 9 mm nodule in the superior region of the left lower lobe.",
+      "box": [
+        [
+          85.126953125,
+          -88.904296875,
+          -90.0,
+          9.096900227181623,
+          9.096900227181623,
+          9.096900227181623
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "superior",
+        "diameter_mm": "9",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0255.mhd",
+      "query_text": "A 7.5 mm nodule in the anterior justapleural region of the right upper lobe.",
+      "box": [
+        [
+          -76.03693559692641,
+          -215.97602822251503,
+          -985.8689999510219,
+          5.293571427208066,
+          5.293571427208066,
+          5.293571427208066
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "anterior justapleural",
+        "diameter_mm": "7.5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0259.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -55.02265181766947,
+          -206.5953843025342,
+          -1112.0686749254628,
+          3.303700502451618,
+          3.303700502451618,
+          3.303700502451618
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0262.mhd",
+      "query_text": "A 4 mm nodule in the right upper lobe.",
+      "box": [
+        [
+          -99.35852284333521,
+          -168.3739763060737,
+          -1032.700999998277,
+          3.195740386970793,
+          3.195740386970793,
+          3.195740386970793
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0262.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          63.750587403432405,
+          -145.91829259647415,
+          -956.7010000217713,
+          4.558311258653416,
+          4.558311258653416,
+          4.558311258653416
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0263.mhd",
+      "query_text": "A 4 mm micronodule in the apical region of the right upper lobe.",
+      "box": [
+        [
+          -44.17195308343662,
+          -160.9413593689747,
+          -954.3770900764404,
+          4.908914158337964,
+          4.908914158337964,
+          4.908914158337964
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "apical",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0264.mhd",
+      "query_text": "A 4 mm nodule in the right lower lobe.",
+      "box": [
+        [
+          -43.6220703125,
+          -85.8603515625,
+          -31.0,
+          5.640641930446653,
+          5.640641930446653,
+          5.640641930446653
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0272.mhd",
+      "query_text": "A micronodule in the right upper lobe.",
+      "box": [
+        [
+          -195.3125,
+          61.12696875,
+          812.76171875,
+          4.1825529567019935,
+          4.1825529567019935,
+          4.1825529567019935
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0274.mhd",
+      "query_text": "A 11 mm nodule in the posterior region of the right upper lobe with margin score 4.",
+      "box": [
+        [
+          -87.93935583264867,
+          -73.47964710009059,
+          -1049.8035181250712,
+          10.821395269148326,
+          10.821395269148326,
+          10.821395269148326
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "posterior",
+        "diameter_mm": "11",
+        "nodule_type": "nodule",
+        "characteristics": "margin score 4",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0274.mhd",
+      "query_text": "A 5 mm nodule in the right lung.",
+      "box": [
+        [
+          -75.50661535443875,
+          -116.0181058758951,
+          -979.007741466578,
+          3.7440650505917454,
+          3.7440650505917454,
+          3.7440650505917454
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lung",
+        "position": "",
+        "diameter_mm": "5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0274.mhd",
+      "query_text": "A 9 mm nodule in the superior region of the left lower lobe with margin score 5 and texture score 4.",
+      "box": [
+        [
+          88.4520581420619,
+          -98.28635088427346,
+          -1057.4762190073966,
+          11.22216192164636,
+          11.22216192164636,
+          11.22216192164636
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "superior",
+        "diameter_mm": "9",
+        "nodule_type": "nodule",
+        "characteristics": "margin score 5; texture score 4",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0288.mhd",
+      "query_text": "A 7 mm nodule in the lateral region of the right lower lobe.",
+      "box": [
+        [
+          -100.6826228190811,
+          -102.82802851287609,
+          -1078.996000110596,
+          4.634840331806281,
+          4.634840331806281,
+          4.634840331806281
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "lateral",
+        "diameter_mm": "7",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0288.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          71.13355628782884,
+          -155.77942390536492,
+          -988.9960000464898,
+          3.7406863486809736,
+          3.7406863486809736,
+          3.7406863486809736
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0288.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          106.01574241267036,
+          -164.16074175288736,
+          -987.996000033575,
+          3.131509093268912,
+          3.131509093268912,
+          3.131509093268912
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0289.mhd",
+      "query_text": "A possible micronodule in the left lower lobe.",
+      "box": [
+        [
+          142.541015625,
+          -94.876953125,
+          -386.5,
+          6.502219681075608,
+          6.502219681075608,
+          6.502219681075608
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0290.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -59.703125,
+          -121.890625,
+          -199.0,
+          5.474708121748548,
+          5.474708121748548,
+          5.474708121748548
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0290.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -89.234375,
+          -153.390625,
+          -237.5,
+          4.646935171163267,
+          4.646935171163267,
+          4.646935171163267
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0290.mhd",
+      "query_text": "A 5 mm nodule in the lingula.",
+      "box": [
+        [
+          31.515625,
+          -104.171875,
+          -222.0,
+          5.0057591675416955,
+          5.0057591675416955,
+          5.0057591675416955
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "lingula",
+        "position": "",
+        "diameter_mm": "5",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0299.mhd",
+      "query_text": "A possible 4 mm micronodule in the right middle lobe.",
+      "box": [
+        [
+          -68.57307095718383,
+          -220.2493365020752,
+          -1058.067,
+          5.479425059613826,
+          5.479425059613826,
+          5.479425059613826
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0299.mhd",
+      "query_text": "A possible 4 mm micronodule in the right middle lobe.",
+      "box": [
+        [
+          -81.84272713851928,
+          -238.31081297111513,
+          -1059.067,
+          3.2146792094771612,
+          3.2146792094771612,
+          3.2146792094771612
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0301.mhd",
+      "query_text": "A possible micronodule in the right middle lobe.",
+      "box": [
+        [
+          -110.01385360148964,
+          -177.59376141264897,
+          -1093.2677692873092,
+          4.776040749064894,
+          4.776040749064894,
+          4.776040749064894
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0301.mhd",
+      "query_text": "A nodule in the right lower lobe.",
+      "box": [
+        [
+          -112.23526655505654,
+          -120.25153164120101,
+          -1112.3210104806749,
+          3.685179887825361,
+          3.685179887825361,
+          3.685179887825361
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0301.mhd",
+      "query_text": "A 4 mm micronodule in the left upper lobe.",
+      "box": [
+        [
+          132.93331741002248,
+          -165.31691227201202,
+          -1028.4266923181153,
+          3.8486825813854555,
+          3.8486825813854555,
+          3.8486825813854555
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0301.mhd",
+      "query_text": "A possible micronodule in the left lower lobe.",
+      "box": [
+        [
+          125.65125715799743,
+          -100.79477172969894,
+          -1114.161106481376,
+          4.645338938051665,
+          4.645338938051665,
+          4.645338938051665
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0304.mhd",
+      "query_text": "A possible 5 mm micronodule in the lateral region of the right upper lobe.",
+      "box": [
+        [
+          -96.48802012274388,
+          -151.02962081049685,
+          -987.816000102746,
+          5.47708327001639,
+          5.47708327001639,
+          5.47708327001639
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "lateral",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0304.mhd",
+      "query_text": "A possible 5 mm micronodule in the lateral region of the right lower lobe.",
+      "box": [
+        [
+          -93.07356059765065,
+          -83.92326040961032,
+          -1068.3160001021024,
+          6.3749110411804715,
+          6.3749110411804715,
+          6.3749110411804715
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "lateral",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0304.mhd",
+      "query_text": "A possible 5 mm micronodule in the lateral region of the left lower lobe.",
+      "box": [
+        [
+          106.11390170823267,
+          -93.49813339434363,
+          -1080.3159998615124,
+          4.010138913074765,
+          4.010138913074765,
+          4.010138913074765
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "lateral",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0305.mhd",
+      "query_text": "A possible micronodule in the right upper lobe.",
+      "box": [
+        [
+          -34.64453125,
+          -111.77734375,
+          -284.5,
+          4.369095750668382,
+          4.369095750668382,
+          4.369095750668382
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0305.mhd",
+      "query_text": "A 6 mm nodule in the basal lateral region of the right lower lobe.",
+      "box": [
+        [
+          -115.85546875,
+          -119.125,
+          -429.5,
+          5.830651741243823,
+          5.830651741243823,
+          5.830651741243823
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "basal lateral",
+        "diameter_mm": "6",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    }
+  ],
+  "validation": [
+    {
+      "image": "images/LNDb-0003.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -112.23046875,
+          -176.88671875,
+          -101.5,
+          7.376240118374322,
+          7.376240118374322,
+          7.376240118374322
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0003.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -114.46875,
+          -158.607421875,
+          -89.0,
+          5.57517617144734,
+          5.57517617144734,
+          5.57517617144734
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0003.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -107.380859375,
+          -164.94921875,
+          -87.0,
+          5.089439493647304,
+          5.089439493647304,
+          5.089439493647304
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0016.mhd",
+      "query_text": "A 4 mm micronodule in the right upper lobe.",
+      "box": [
+        [
+          -74.8251953125,
+          -154.4443359375,
+          95.0,
+          4.3582130687572445,
+          4.3582130687572445,
+          4.3582130687572445
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0016.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -64.5654296875,
+          -129.7001953125,
+          100.66666666666667,
+          5.167232961267911,
+          5.167232961267911,
+          5.167232961267911
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0017.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          120.0634765625,
+          -129.427734375,
+          -215.5,
+          4.881320414381969,
+          4.881320414381969,
+          4.881320414381969
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0017.mhd",
+      "query_text": "A 6 mm micronodule in the superior justapleural region of the left lower lobe.",
+      "box": [
+        [
+          109.95735677083333,
+          -97.58170572916667,
+          -226.0,
+          6.591755061598108,
+          6.591755061598108,
+          6.591755061598108
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "superior justapleural",
+        "diameter_mm": "6",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0017.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          109.4873046875,
+          -168.5595703125,
+          -324.5,
+          6.008794544273791,
+          6.008794544273791,
+          6.008794544273791
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0034.mhd",
+      "query_text": "A nodule in the left upper lobe with margin score 3 and sphericity score 3.",
+      "box": [
+        [
+          102.52799479166667,
+          -108.099609375,
+          -154.5,
+          9.418516465272022,
+          9.418516465272022,
+          9.418516465272022
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "margin score 3; sphericity score 3",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0055.mhd",
+      "query_text": "A 8 mm nodule in the peripheral region of the right lower lobe.",
+      "box": [
+        [
+          -123.623046875,
+          -106.310546875,
+          -213.5,
+          7.980038739296268,
+          7.980038739296268,
+          7.980038739296268
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "peripheral",
+        "diameter_mm": "8",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0055.mhd",
+      "query_text": "A possible nodule in the left lower lobe.",
+      "box": [
+        [
+          120.353515625,
+          -104.849609375,
+          -234.5,
+          5.130269496250404,
+          5.130269496250404,
+          5.130269496250404
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0055.mhd",
+      "query_text": "A possible nodule in the left lower lobe.",
+      "box": [
+        [
+          118.892578125,
+          -163.65234375,
+          -200.0,
+          5.850447299727842,
+          5.850447299727842,
+          5.850447299727842
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0055.mhd",
+      "query_text": "A possible nodule in the right lower lobe.",
+      "box": [
+        [
+          -138.59765625,
+          -199.810546875,
+          -200.5,
+          5.044967835979922,
+          5.044967835979922,
+          5.044967835979922
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0055.mhd",
+      "query_text": "A possible nodule in the right middle lobe.",
+      "box": [
+        [
+          -113.03125,
+          -235.96875,
+          -177.5,
+          4.7625203214440255,
+          4.7625203214440255,
+          4.7625203214440255
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0056.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -42.90625,
+          -191.3740234375,
+          -122.5,
+          10.297864835842496,
+          10.297864835842496,
+          10.297864835842496
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0056.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -31.5966796875,
+          -103.037109375,
+          -94.5,
+          6.692676096314228,
+          6.692676096314228,
+          6.692676096314228
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0056.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          101.3671875,
+          -116.7919921875,
+          -103.0,
+          6.03531973010587,
+          6.03531973010587,
+          6.03531973010587
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0061.mhd",
+      "query_text": "A possible micronodule in the posterior apical region of the left upper lobe.",
+      "box": [
+        [
+          85.0234375,
+          -129.3828125,
+          -78.0,
+          3.9502822520768066,
+          3.9502822520768066,
+          3.9502822520768066
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "posterior apical",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0061.mhd",
+      "query_text": "A possible micronodule in the posterior apical region of the left upper lobe.",
+      "box": [
+        [
+          108.09114583333333,
+          -138.7890625,
+          -93.83333333333333,
+          4.720406400034882,
+          4.720406400034882,
+          4.720406400034882
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "posterior apical",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0063.mhd",
+      "query_text": "A 18 mm nodule in the anterior region of the left upper lobe with calcification score 3.",
+      "box": [
+        [
+          79.658203125,
+          -224.919921875,
+          -563.0,
+          12.894641588875466,
+          12.894641588875466,
+          12.894641588875466
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "anterior",
+        "diameter_mm": "18",
+        "nodule_type": "nodule",
+        "characteristics": "calcification score 3",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0063.mhd",
+      "query_text": "A possible 4 mm micronodule in the left lung.",
+      "box": [
+        [
+          34.326171875,
+          -89.748046875,
+          -681.0,
+          4.396521681396303,
+          4.396521681396303,
+          4.396521681396303
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lung",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0106.mhd",
+      "query_text": "A 4 mm micronodule in the apical region of the right lung.",
+      "box": [
+        [
+          -69.25586256980895,
+          -186.79609872102736,
+          -994.2,
+          5.056127813477738,
+          5.056127813477738,
+          5.056127813477738
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lung",
+        "position": "apical",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0113.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -87.60566406250001,
+          -124.5048828125,
+          -1018.2666666666665,
+          4.708486641293108,
+          4.708486641293108,
+          4.708486641293108
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0113.mhd",
+      "query_text": "A 4 mm micronodule in the justapleural region of the left upper lobe.",
+      "box": [
+        [
+          104.13066406249999,
+          -180.4384765625,
+          -1047.6,
+          4.229364886701482,
+          4.229364886701482,
+          4.229364886701482
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "justapleural",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0114.mhd",
+      "query_text": "A 35 mm mass in the left upper lobe.",
+      "box": [
+        [
+          83.57687725264445,
+          -115.96684223293005,
+          -978.6241620333685,
+          30.85001417323649,
+          30.85001417323649,
+          30.85001417323649
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "35",
+        "nodule_type": "mass",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0114.mhd",
+      "query_text": "A 10 mm granuloma in the left upper lobe with calcification score 5.",
+      "box": [
+        [
+          95.06701560167764,
+          -121.35943235270807,
+          -998.0579562869277,
+          6.332781464246694,
+          6.332781464246694,
+          6.332781464246694
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "10",
+        "nodule_type": "granuloma",
+        "characteristics": "calcification score 5",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0136.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -109.15574255165569,
+          -233.95598660708077,
+          -1117.9942228234795,
+          5.029780764787819,
+          5.029780764787819,
+          5.029780764787819
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0163.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -92.06912772898858,
+          -181.5236824937225,
+          -1150.8520610724884,
+          3.975408224356403,
+          3.975408224356403,
+          3.975408224356403
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0163.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -106.70598429819623,
+          -165.80933321926364,
+          -1146.4402901695082,
+          4.218396835985404,
+          4.218396835985404,
+          4.218396835985404
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0163.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          149.92416867657158,
+          -157.817654761541,
+          -1172.0042517329916,
+          6.758386516550781,
+          6.758386516550781,
+          6.758386516550781
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0175.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -106.5657288103713,
+          -118.98234302496205,
+          -1011.4950000591507,
+          4.817412635084608,
+          4.817412635084608,
+          4.817412635084608
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0194.mhd",
+      "query_text": "A possible micronodule in the right upper lobe.",
+      "box": [
+        [
+          -22.760582653129333,
+          -80.43188439779277,
+          -983.1620376196502,
+          3.8270067282039784,
+          3.8270067282039784,
+          3.8270067282039784
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0195.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -106.57007955373632,
+          -118.90111440660554,
+          -1011.4950000591527,
+          4.712749778204759,
+          4.712749778204759,
+          4.712749778204759
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0213.mhd",
+      "query_text": "A 11 mm nodule in the right upper lobe.",
+      "box": [
+        [
+          -74.56954666756202,
+          -92.28099158782138,
+          -1030.5505081487042,
+          11.420070966817299,
+          11.420070966817299,
+          11.420070966817299
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "11",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0219.mhd",
+      "query_text": "A possible micronodule in the justapleural region of the upper lobe.",
+      "box": [
+        [
+          -107.04224440586799,
+          -132.30555723653407,
+          -999.7213208832376,
+          3.554604376410732,
+          3.554604376410732,
+          3.554604376410732
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "upper lobe",
+        "position": "justapleural",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0230.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -115.11755498451237,
+          -153.61486770271256,
+          -1175.8427920981703,
+          6.510050895939446,
+          6.510050895939446,
+          6.510050895939446
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0230.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -54.478663638227445,
+          -242.48562264041846,
+          -1145.353728425918,
+          5.42658099601235,
+          5.42658099601235,
+          5.42658099601235
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0230.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          136.57981467499832,
+          -110.77127211669958,
+          -1132.516179445524,
+          6.177892713748759,
+          6.177892713748759,
+          6.177892713748759
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0246.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          84.85827434159425,
+          -104.46784368027201,
+          -940.3909999980153,
+          3.902378269939444,
+          3.902378269939444,
+          3.902378269939444
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0250.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -74.07527264647257,
+          -167.086140799623,
+          -910.457018876192,
+          9.068824102842974,
+          9.068824102842974,
+          9.068824102842974
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0250.mhd",
+      "query_text": "A 3 mm granuloma in the left upper lobe with calcification score 5.",
+      "box": [
+        [
+          50.374912968842395,
+          -139.93177947075532,
+          -885.9901547818596,
+          4.532748657269509,
+          4.532748657269509,
+          4.532748657269509
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "3",
+        "nodule_type": "granuloma",
+        "characteristics": "calcification score 5",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0260.mhd",
+      "query_text": "A nodule in the left upper lobe.",
+      "box": [
+        [
+          31.357990437128734,
+          -131.4375390457177,
+          -906.7152869764509,
+          4.437107268584851,
+          4.437107268584851,
+          4.437107268584851
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0260.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -98.22339900604238,
+          -206.37433847162964,
+          -1032.2453896391255,
+          4.703387556161069,
+          4.703387556161069,
+          4.703387556161069
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0269.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -143.48550548736205,
+          -168.44388896605278,
+          -1112.2962575925249,
+          5.9622975161160525,
+          5.9622975161160525,
+          5.9622975161160525
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0269.mhd",
+      "query_text": "A possible 11 mm nodule in the basal lateral region of the right lower lobe.",
+      "box": [
+        [
+          -115.3539488994031,
+          -92.94886357582135,
+          -1110.4209603177346,
+          5.874096231128142,
+          5.874096231128142,
+          5.874096231128142
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "basal lateral",
+        "diameter_mm": "11",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0269.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          146.35179145970068,
+          -112.46646854080922,
+          -1107.7154950363176,
+          5.354596139201288,
+          5.354596139201288,
+          5.354596139201288
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0277.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -52.32465194605861,
+          -180.79971119959794,
+          -923.940578203571,
+          10.166347175056652,
+          10.166347175056652,
+          10.166347175056652
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0277.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          11.307944209731843,
+          -107.82932033089975,
+          -916.8962604386494,
+          4.58660630755248,
+          4.58660630755248,
+          4.58660630755248
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0284.mhd",
+      "query_text": "A 17.5 mm nodule in the apical region of the right upper lobe with texture score 5 and spiculation score 1.",
+      "box": [
+        [
+          -67.798828125,
+          -98.373046875,
+          -232.0000000000011,
+          16.194364142919927,
+          16.194364142919927,
+          16.194364142919927
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "apical",
+        "diameter_mm": "17.5",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 5; spiculation score 1",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0284.mhd",
+      "query_text": "A possible 4 mm micronodule in the posterior region of the right upper lobe.",
+      "box": [
+        [
+          -111.884765625,
+          -96.369140625,
+          -297.20000000000203,
+          4.623709628731773,
+          4.623709628731773,
+          4.623709628731773
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "posterior",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0284.mhd",
+      "query_text": "A possible 5 mm micronodule in the superior region of the right lower lobe.",
+      "box": [
+        [
+          -125.244140625,
+          -113.068359375,
+          -356.4000000000029,
+          5.617274765037322,
+          5.617274765037322,
+          5.617274765037322
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "superior",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0284.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          95.185546875,
+          -95.033203125,
+          -311.2000000000022,
+          5.151171515886074,
+          5.151171515886074,
+          5.151171515886074
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0297.mhd",
+      "query_text": "A 8 mm nodule in the right lower lobe.",
+      "box": [
+        [
+          -83.44921875,
+          -105.900390625,
+          -374.5,
+          9.28704038072959,
+          9.28704038072959,
+          9.28704038072959
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "8",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0308.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -26.21875,
+          -121.24609375,
+          71.0,
+          3.0,
+          3.0,
+          3.0
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    }
+  ],
+  "test": [
+    {
+      "image": "images/LNDb-0003.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -112.23046875,
+          -176.88671875,
+          -101.5,
+          7.376240118374322,
+          7.376240118374322,
+          7.376240118374322
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0003.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -114.46875,
+          -158.607421875,
+          -89.0,
+          5.57517617144734,
+          5.57517617144734,
+          5.57517617144734
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0003.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -107.380859375,
+          -164.94921875,
+          -87.0,
+          5.089439493647304,
+          5.089439493647304,
+          5.089439493647304
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0016.mhd",
+      "query_text": "A 4 mm micronodule in the right upper lobe.",
+      "box": [
+        [
+          -74.8251953125,
+          -154.4443359375,
+          95.0,
+          4.3582130687572445,
+          4.3582130687572445,
+          4.3582130687572445
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0016.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -64.5654296875,
+          -129.7001953125,
+          100.66666666666667,
+          5.167232961267911,
+          5.167232961267911,
+          5.167232961267911
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0017.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          120.0634765625,
+          -129.427734375,
+          -215.5,
+          4.881320414381969,
+          4.881320414381969,
+          4.881320414381969
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0017.mhd",
+      "query_text": "A 6 mm micronodule in the superior justapleural region of the left lower lobe.",
+      "box": [
+        [
+          109.95735677083333,
+          -97.58170572916667,
+          -226.0,
+          6.591755061598108,
+          6.591755061598108,
+          6.591755061598108
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "superior justapleural",
+        "diameter_mm": "6",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0017.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          109.4873046875,
+          -168.5595703125,
+          -324.5,
+          6.008794544273791,
+          6.008794544273791,
+          6.008794544273791
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0034.mhd",
+      "query_text": "A nodule in the left upper lobe with margin score 3 and sphericity score 3.",
+      "box": [
+        [
+          102.52799479166667,
+          -108.099609375,
+          -154.5,
+          9.418516465272022,
+          9.418516465272022,
+          9.418516465272022
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "margin score 3; sphericity score 3",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0055.mhd",
+      "query_text": "A 8 mm nodule in the peripheral region of the right lower lobe.",
+      "box": [
+        [
+          -123.623046875,
+          -106.310546875,
+          -213.5,
+          7.980038739296268,
+          7.980038739296268,
+          7.980038739296268
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "peripheral",
+        "diameter_mm": "8",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0055.mhd",
+      "query_text": "A possible nodule in the left lower lobe.",
+      "box": [
+        [
+          120.353515625,
+          -104.849609375,
+          -234.5,
+          5.130269496250404,
+          5.130269496250404,
+          5.130269496250404
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0055.mhd",
+      "query_text": "A possible nodule in the left lower lobe.",
+      "box": [
+        [
+          118.892578125,
+          -163.65234375,
+          -200.0,
+          5.850447299727842,
+          5.850447299727842,
+          5.850447299727842
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lower lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0055.mhd",
+      "query_text": "A possible nodule in the right lower lobe.",
+      "box": [
+        [
+          -138.59765625,
+          -199.810546875,
+          -200.5,
+          5.044967835979922,
+          5.044967835979922,
+          5.044967835979922
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0055.mhd",
+      "query_text": "A possible nodule in the right middle lobe.",
+      "box": [
+        [
+          -113.03125,
+          -235.96875,
+          -177.5,
+          4.7625203214440255,
+          4.7625203214440255,
+          4.7625203214440255
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right middle lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0056.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -42.90625,
+          -191.3740234375,
+          -122.5,
+          10.297864835842496,
+          10.297864835842496,
+          10.297864835842496
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0056.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -31.5966796875,
+          -103.037109375,
+          -94.5,
+          6.692676096314228,
+          6.692676096314228,
+          6.692676096314228
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0056.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          101.3671875,
+          -116.7919921875,
+          -103.0,
+          6.03531973010587,
+          6.03531973010587,
+          6.03531973010587
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0061.mhd",
+      "query_text": "A possible micronodule in the posterior apical region of the left upper lobe.",
+      "box": [
+        [
+          85.0234375,
+          -129.3828125,
+          -78.0,
+          3.9502822520768066,
+          3.9502822520768066,
+          3.9502822520768066
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "posterior apical",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0061.mhd",
+      "query_text": "A possible micronodule in the posterior apical region of the left upper lobe.",
+      "box": [
+        [
+          108.09114583333333,
+          -138.7890625,
+          -93.83333333333333,
+          4.720406400034882,
+          4.720406400034882,
+          4.720406400034882
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "posterior apical",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0063.mhd",
+      "query_text": "A 18 mm nodule in the anterior region of the left upper lobe with calcification score 3.",
+      "box": [
+        [
+          79.658203125,
+          -224.919921875,
+          -563.0,
+          12.894641588875466,
+          12.894641588875466,
+          12.894641588875466
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "anterior",
+        "diameter_mm": "18",
+        "nodule_type": "nodule",
+        "characteristics": "calcification score 3",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0063.mhd",
+      "query_text": "A possible 4 mm micronodule in the left lung.",
+      "box": [
+        [
+          34.326171875,
+          -89.748046875,
+          -681.0,
+          4.396521681396303,
+          4.396521681396303,
+          4.396521681396303
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left lung",
+        "position": "",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0106.mhd",
+      "query_text": "A 4 mm micronodule in the apical region of the right lung.",
+      "box": [
+        [
+          -69.25586256980895,
+          -186.79609872102736,
+          -994.2,
+          5.056127813477738,
+          5.056127813477738,
+          5.056127813477738
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lung",
+        "position": "apical",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0113.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -87.60566406250001,
+          -124.5048828125,
+          -1018.2666666666665,
+          4.708486641293108,
+          4.708486641293108,
+          4.708486641293108
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0113.mhd",
+      "query_text": "A 4 mm micronodule in the justapleural region of the left upper lobe.",
+      "box": [
+        [
+          104.13066406249999,
+          -180.4384765625,
+          -1047.6,
+          4.229364886701482,
+          4.229364886701482,
+          4.229364886701482
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "justapleural",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0114.mhd",
+      "query_text": "A 35 mm mass in the left upper lobe.",
+      "box": [
+        [
+          83.57687725264445,
+          -115.96684223293005,
+          -978.6241620333685,
+          30.85001417323649,
+          30.85001417323649,
+          30.85001417323649
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "35",
+        "nodule_type": "mass",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0114.mhd",
+      "query_text": "A 10 mm granuloma in the left upper lobe with calcification score 5.",
+      "box": [
+        [
+          95.06701560167764,
+          -121.35943235270807,
+          -998.0579562869277,
+          6.332781464246694,
+          6.332781464246694,
+          6.332781464246694
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "10",
+        "nodule_type": "granuloma",
+        "characteristics": "calcification score 5",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0136.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -109.15574255165569,
+          -233.95598660708077,
+          -1117.9942228234795,
+          5.029780764787819,
+          5.029780764787819,
+          5.029780764787819
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0163.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -92.06912772898858,
+          -181.5236824937225,
+          -1150.8520610724884,
+          3.975408224356403,
+          3.975408224356403,
+          3.975408224356403
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0163.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -106.70598429819623,
+          -165.80933321926364,
+          -1146.4402901695082,
+          4.218396835985404,
+          4.218396835985404,
+          4.218396835985404
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0163.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          149.92416867657158,
+          -157.817654761541,
+          -1172.0042517329916,
+          6.758386516550781,
+          6.758386516550781,
+          6.758386516550781
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0175.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -106.5657288103713,
+          -118.98234302496205,
+          -1011.4950000591507,
+          4.817412635084608,
+          4.817412635084608,
+          4.817412635084608
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0194.mhd",
+      "query_text": "A possible micronodule in the right upper lobe.",
+      "box": [
+        [
+          -22.760582653129333,
+          -80.43188439779277,
+          -983.1620376196502,
+          3.8270067282039784,
+          3.8270067282039784,
+          3.8270067282039784
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0195.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -106.57007955373632,
+          -118.90111440660554,
+          -1011.4950000591527,
+          4.712749778204759,
+          4.712749778204759,
+          4.712749778204759
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0213.mhd",
+      "query_text": "A 11 mm nodule in the right upper lobe.",
+      "box": [
+        [
+          -74.56954666756202,
+          -92.28099158782138,
+          -1030.5505081487042,
+          11.420070966817299,
+          11.420070966817299,
+          11.420070966817299
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "",
+        "diameter_mm": "11",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0219.mhd",
+      "query_text": "A possible micronodule in the justapleural region of the upper lobe.",
+      "box": [
+        [
+          -107.04224440586799,
+          -132.30555723653407,
+          -999.7213208832376,
+          3.554604376410732,
+          3.554604376410732,
+          3.554604376410732
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "upper lobe",
+        "position": "justapleural",
+        "diameter_mm": "",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0230.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -115.11755498451237,
+          -153.61486770271256,
+          -1175.8427920981703,
+          6.510050895939446,
+          6.510050895939446,
+          6.510050895939446
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0230.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -54.478663638227445,
+          -242.48562264041846,
+          -1145.353728425918,
+          5.42658099601235,
+          5.42658099601235,
+          5.42658099601235
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0230.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          136.57981467499832,
+          -110.77127211669958,
+          -1132.516179445524,
+          6.177892713748759,
+          6.177892713748759,
+          6.177892713748759
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0246.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          84.85827434159425,
+          -104.46784368027201,
+          -940.3909999980153,
+          3.902378269939444,
+          3.902378269939444,
+          3.902378269939444
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0250.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -74.07527264647257,
+          -167.086140799623,
+          -910.457018876192,
+          9.068824102842974,
+          9.068824102842974,
+          9.068824102842974
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0250.mhd",
+      "query_text": "A 3 mm granuloma in the left upper lobe with calcification score 5.",
+      "box": [
+        [
+          50.374912968842395,
+          -139.93177947075532,
+          -885.9901547818596,
+          4.532748657269509,
+          4.532748657269509,
+          4.532748657269509
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "3",
+        "nodule_type": "granuloma",
+        "characteristics": "calcification score 5",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0260.mhd",
+      "query_text": "A nodule in the left upper lobe.",
+      "box": [
+        [
+          31.357990437128734,
+          -131.4375390457177,
+          -906.7152869764509,
+          4.437107268584851,
+          4.437107268584851,
+          4.437107268584851
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "left upper lobe",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0260.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -98.22339900604238,
+          -206.37433847162964,
+          -1032.2453896391255,
+          4.703387556161069,
+          4.703387556161069,
+          4.703387556161069
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0269.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -143.48550548736205,
+          -168.44388896605278,
+          -1112.2962575925249,
+          5.9622975161160525,
+          5.9622975161160525,
+          5.9622975161160525
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0269.mhd",
+      "query_text": "A possible 11 mm nodule in the basal lateral region of the right lower lobe.",
+      "box": [
+        [
+          -115.3539488994031,
+          -92.94886357582135,
+          -1110.4209603177346,
+          5.874096231128142,
+          5.874096231128142,
+          5.874096231128142
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "basal lateral",
+        "diameter_mm": "11",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0269.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          146.35179145970068,
+          -112.46646854080922,
+          -1107.7154950363176,
+          5.354596139201288,
+          5.354596139201288,
+          5.354596139201288
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 4,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0277.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -52.32465194605861,
+          -180.79971119959794,
+          -923.940578203571,
+          10.166347175056652,
+          10.166347175056652,
+          10.166347175056652
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0277.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          11.307944209731843,
+          -107.82932033089975,
+          -916.8962604386494,
+          4.58660630755248,
+          4.58660630755248,
+          4.58660630755248
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0284.mhd",
+      "query_text": "A 17.5 mm nodule in the apical region of the right upper lobe with texture score 5 and spiculation score 1.",
+      "box": [
+        [
+          -67.798828125,
+          -98.373046875,
+          -232.0000000000011,
+          16.194364142919927,
+          16.194364142919927,
+          16.194364142919927
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "apical",
+        "diameter_mm": "17.5",
+        "nodule_type": "nodule",
+        "characteristics": "texture score 5; spiculation score 1",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0284.mhd",
+      "query_text": "A possible 4 mm micronodule in the posterior region of the right upper lobe.",
+      "box": [
+        [
+          -111.884765625,
+          -96.369140625,
+          -297.20000000000203,
+          4.623709628731773,
+          4.623709628731773,
+          4.623709628731773
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 2,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right upper lobe",
+        "position": "posterior",
+        "diameter_mm": "4",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0284.mhd",
+      "query_text": "A possible 5 mm micronodule in the superior region of the right lower lobe.",
+      "box": [
+        [
+          -125.244140625,
+          -113.068359375,
+          -356.4000000000029,
+          5.617274765037322,
+          5.617274765037322,
+          5.617274765037322
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 3,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "superior",
+        "diameter_mm": "5",
+        "nodule_type": "micronodule",
+        "characteristics": "",
+        "uncertainty": "how many?"
+      }
+    },
+    {
+      "image": "images/LNDb-0284.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          95.185546875,
+          -95.033203125,
+          -311.2000000000022,
+          5.151171515886074,
+          5.151171515886074,
+          5.151171515886074
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 5,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0297.mhd",
+      "query_text": "A 8 mm nodule in the right lower lobe.",
+      "box": [
+        [
+          -83.44921875,
+          -105.900390625,
+          -374.5,
+          9.28704038072959,
+          9.28704038072959,
+          9.28704038072959
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 1,
+      "text_source": "TextReport+RadAnnotation",
+      "text_fields": {
+        "loc": "right lower lobe",
+        "position": "",
+        "diameter_mm": "8",
+        "nodule_type": "nodule",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    },
+    {
+      "image": "images/LNDb-0308.mhd",
+      "query_text": "A pulmonary nodule.",
+      "box": [
+        [
+          -26.21875,
+          -121.24609375,
+          71.0,
+          3.0,
+          3.0,
+          3.0
+        ]
+      ],
+      "label": [
+        0
+      ],
+      "query_finding_id": 1,
+      "text_valid": 0,
+      "text_source": "generic",
+      "text_fields": {
+        "loc": "",
+        "position": "",
+        "diameter_mm": "",
+        "nodule_type": "",
+        "characteristics": "",
+        "uncertainty": ""
+      }
+    }
+  ]
+}

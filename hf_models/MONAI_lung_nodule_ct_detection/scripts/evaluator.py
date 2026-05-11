@@ -23,6 +23,7 @@ from monai.utils.enums import CommonKeys as Keys
 from torch.utils.data import DataLoader
 
 from .detection_inferer import RetinaNetInferer
+from .text_conditioning import batch_text_features
 
 if TYPE_CHECKING:
     from ignite.engine import Engine, EventEnum
@@ -61,6 +62,9 @@ def detection_prepare_val_batch(
             )
             for batch_data_i in batchdata
         ]
+        if "text_fields" in batchdata[0]:
+            text_features = batch_text_features(batchdata, device=device, non_blocking=non_blocking, **kwargs)
+            return inputs, targets, (), {"text_features": text_features}
         return (inputs, targets)
     return inputs, None
 
